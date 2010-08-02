@@ -1,0 +1,50 @@
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<title>Transcription Timer</title>
+<!-- Copyright 2010 by Ryan Fitzgerald (rwfitzge@gmail.com). -->
+
+<link rel="stylesheet" type="text/css" href="timer.css">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="timer.js"></script>
+</head>
+
+<body>
+    
+<div id="main">
+    <div id="timers">
+        <div class="timer" id="clockblock">
+            <span class="dial" id="display_currenttime">0:00:00</span><span id="display_ampm">am</span><br />
+            <span class="caption">current time</span>
+        </div>
+        <div class="timer" id="audioblock">
+            <span class="dial" id="display_audiotime">00:00</span><br />
+            <span class="caption">audio time</span><br />   
+            <span class="subcap"><input type="text" class="box75" id="input_newtime"/> [<a href="#" id="input_update">update</a>]</span>
+        </div>
+        <div class="timer" id="breakblock">
+            <span class="dial" id="display_breaktime">00:00</span><br />
+            <span class="caption">break time</span><br />
+            <span class="subcap">( <input type="checkbox" id="input_breakbox" /> taking break)</span>
+        </div>
+        <div class="info">
+            <strong>Started At:</strong> <span id="display_starttime">--</span> <span style="font-size: 12px">[<a href="#" id="input_start">start</a>]</span>
+        </div>
+        <div class="info">
+            <strong>Target Time:</strong> <span id="display_targettime">--</span>
+        </div>
+    </div>
+    <div id="options">
+        <p><div class="optcap">Length of file:</div>
+            <input type="text" class="box50" id="input_filelength" />
+        <p><div class="optcap">Target speed:</div>
+            <input type="text" class="box25" id="input_audiotarget" value="5" /> minutes audio per
+            <input type="text" class="box25" id="input_realtarget" value="15" /> minutes work
+        <p><div class="optcap">Break time:</div>
+            <input type="text" class="box25" id="input_realbreak" value="10" /> minutes break per
+            <input type="text" class="box25" id="input_audiobreak" value="20" /> minutes audio
+    </div>
+</div>
+
+</body>
+</html>
