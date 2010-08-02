@@ -1,0 +1,15 @@
+This is a tool written to help me stay on schedule in my work as a
+transcriptionist.  The user provides the length of the audio file, the desired 
+pace of transcription, and the ratio of break time to work accomplished.  The 
+tool then provides a running clock showing how far into the audio file the 
+transcriptionist should be, while keeping track of break time earned and 
+spent.  The user can adjust the settings as necessary without resetting the 
+clock.
+
+This is obviously targeted at a narrow niche, but I have vague plans to 
+refactor and generalize it for other use cases where someone might want to 
+maintain a specific, quantifiable pace.  One that comes to mind is NaNoWriMo, 
+where people often try to write a particular number of words per session.  If 
+I can think of any others, maybe I'll actually do it.
+
+-- Ryan Fitzgerald
