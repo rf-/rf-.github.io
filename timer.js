@@ -215,12 +215,14 @@ function clockLoop() {
         workDone = timeDiff(Times.now, Times.start) * Settings.audioRatio;
         breakTime = workDone * Settings.breakRatio;
         $("#display_audiotime").html(secondsFormat(workDone + Offsets.audio_s));
+        document.title = secondsFormat(wordDone + Offsets.audio_s) + " (audio)";
         $("#display_breaktime").html(secondsFormat(breakTime + Offsets.break_s));
     }
     
     if (Status.working && Status.onBreak) {
         breakSpent = timeDiff(Times.now, Times.start);
         $("#display_breaktime").html(secondsFormat(Offsets.break_s - breakSpent));
+        document.title = secondsFormat(Offsets.break_s - breakSpent) + " (break)";
     }
 }
 
