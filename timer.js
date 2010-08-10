@@ -215,7 +215,7 @@ function clockLoop() {
         workDone = timeDiff(Times.now, Times.start) * Settings.audioRatio;
         breakTime = workDone * Settings.breakRatio;
         $("#display_audiotime").html(secondsFormat(workDone + Offsets.audio_s));
-        document.title = secondsFormat(wordDone + Offsets.audio_s) + " (audio)";
+        document.title = secondsFormat(workDone + Offsets.audio_s) + " (audio)";
         $("#display_breaktime").html(secondsFormat(breakTime + Offsets.break_s));
     }
     
