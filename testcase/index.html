@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<head>
+  <title>Highcharts Firefox Bug Test Case</title>
+  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js'></script>
+  <script type='text/javascript' src='highcharts.js'></script>
+  <script type='text/javascript'>
+  $.getJSON('papers_views_stats.json', null, function (data) {
+    var options = {
+          chart: {
+            defaultSeriesType: 'line',
+            zoomType: 'x',
+            width: 720,
+            showAxes: true,
+            height: 500,
+            marginBottom: 60,
+            renderTo: 'Chart_Profile',
+            plotBorderWidth: 1,
+            style: {
+                fontFamily: '"Helvetica Neue", Arial, sans-serif',
+                fontSize: '11px'
+            },
+            colors: [
+                	'#6c91bc',
+                	'#bc6c6c',
+                	'#90bc6c',
+                	'#9977c1',
+                	'#64b7cd',
+                	'#de9f6c',
+                	'#a3aec1',
+                	'#a48786',
+                	'#b8d48a'
+            ],
+            renderTo: 'Chart_Papers',
+            marginBottom: 215,
+            height: 650
+          },
+          yAxis: [
+            {
+            allowDecimals: false,
+              min: 0,
+              title: {
+                text: 'Views'
+              }
+            }
+          ],
+          title: {
+            text: ''
+          },
+          xAxis: {
+            startOnTick: true,
+            showLastLabel: true,
+            maxZoom: 14 * 24 * 60 * 60 * 1000,
+            type: 'datetime',
+            labels: {
+              align: 'center'
+            }
+          },
+          legend: {
+            align: 'left',
+            x: 40,
+            layout: 'vertical',
+            borderWidth: 0,
+            floating: true
+          },
+          credits: {
+            enabled: false
+          },
+          tooltip: {
+            formatter: function(){return this.series.name + '<br/>' + Highcharts.dateFormat('%a %b %e', this.x) + ': ' + this.y + ' views';}
+          },
+          series: []
+        },
+        chart = new Highcharts.Chart(options),
+        lines = data.length;
+
+    for (var i = 0; i < lines; i++) {
+      chart.addSeries(data[i]);
+    }
+  });
+  </script>
+</head>
+<body>
+  <div id='Chart_Papers'>
+  </div>
+</body>
+</html>
